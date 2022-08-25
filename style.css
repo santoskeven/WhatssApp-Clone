@@ -1,0 +1,414 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-size: 10px;
+    font-family: SegoeUI;
+    display: flex;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('fonts/Segoe\ UI.ttf') format('truetype');
+  }
+
+.contentConversas::-webkit-scrollbar {
+    width: 1rem;      
+}
+.contentConversas::-webkit-scrollbar-track {
+    background: #111b21; 
+}
+.contentConversas::-webkit-scrollbar-thumb {
+    background-color: #aebac1;  
+    border-radius: 20px;       
+    border: 3px solid #202c33;
+}
+  
+/* scroll do conteudoConversa */
+
+/* .conteudoConversa::-webkit-scrollbar {
+    width: 1rem;    
+}
+.conteudoConversa::-webkit-scrollbar-track {
+    background: #211f1100; 
+    opacity: .6;
+   
+}
+.conteudoConversa::-webkit-scrollbar-thumb {
+    background-color: #aebac1;  
+    border-radius: 20px;       
+    border: 3px solid #202c33;
+   
+} */
+  
+.RolagemPessoas{
+    height: 100vh;
+    width: 30%;
+    background-color: #111b21;
+}
+
+
+.RolagemPessoas > header{
+    width: 30%;
+    position: fixed;
+    height: 6rem;
+    background-color: #202c33;
+    border-right: 1px solid #aebac15b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.6rem;
+    z-index: 1;
+}
+
+.RolagemPessoas .proprietario{
+    width:  65%;
+}
+
+
+.RolagemPessoas .proprietario span{
+    background-image: url('imgs/prop.jpg');
+    background-size:contain;
+    width:  4rem;
+    height: 4rem;
+    display: block;
+    border-radius: 50%;
+}
+
+.header_funcao{
+    display: flex;
+    justify-content:space-between;
+    width: 35%;
+}
+
+.header_funcao i{
+    color: #aebac1;
+    font-size: 2.1rem;
+    /* margin-left: 3.5rem; */
+    padding: .8rem;
+}
+
+.header_funcao i{
+    cursor: pointer;
+}
+
+.FiltroHeader{
+    width: 30%;
+    margin-top: 6rem;
+    height: 4.9rem;
+    display: flex;
+    background: #111b21;
+    border-right: 1px solid #aebac15b;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 2%;
+    z-index: 1;
+}
+
+.FiltroHeader i{
+    font-size: 1.7rem;
+    color: #6c9695;
+}
+
+.FiltroHeader:nth-child(2){
+    cursor: pointer;
+}
+
+.FiltroHeader .lupa{
+    position: absolute;
+    margin-left: 5%;
+    padding: 0 1rem 0 0;
+}
+
+.FiltroHeader input{
+    width: 92%;
+    height: 3.5rem;
+    border: 0;
+    border-radius: .8rem;
+    outline: none;
+    padding-left: 16%;
+    background-color: #202c33;
+    color: #6c9695;
+}
+
+.contentConversas{
+    position: relative;
+    border-right: 1px solid #aebac15b;
+    top: 11rem;
+    overflow-x: hidden;
+    height: calc(100vh - 11rem);
+}
+
+.ConversaUnica{
+    width: 98%;
+    height: 7.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.ConversarPessoas:hover{
+    background-color: rgba(255, 255, 255, 0.068);
+}
+
+.ConversarPessoas.ativo{
+    background-color: rgba(255, 255, 255, 0.132);
+}
+
+.fotoConversa{
+    width: 18%;
+    min-width: 7.3rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.fotoConversa img{
+    /* background-image: url('users/user1.jpg'); */
+    background-size:contain;
+    width: 4.9rem;
+    height: 4.9rem;
+    border-radius: 50%;
+}
+
+.StatusConversa{
+    height: 100%;
+    width: 80%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.068);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(245, 245, 245);
+    padding-right: 1.5rem;
+}
+
+.StatusConversa > p{
+    font-size: 1.7rem;
+    color: #eaebe3;
+}
+
+.caixa_mensagem{
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    width: 90%;
+    padding: 0.5rem 0 0.5rem 0;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.caixa_mensagem i{
+    margin-right: .6rem;
+    color: #1176bb;
+}
+
+.caixa_mensagem p{
+    font-size: 1.4rem;
+    color: #8696a0;
+}
+
+.HoraConversa{
+    position: absolute;
+    top: 0%;
+    right: 2%;
+}
+
+
+/* CSS PARTE DIREITA, CONTEÚDO DE CADA CONVERSA */
+
+.conteudoPessoas{
+    width: 70%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudoPessoas header{
+    display: flex;
+    width: 100%;
+    min-height: 6rem;
+    align-items: center;
+    padding: .5rem 1.5rem;
+    background-color: #202c33;
+    color: #8696a0;
+}
+
+.conteudoFoto{
+    display: flex;
+    align-items: center;
+    width: 88%;
+    height: 4.2rem;
+}
+
+.conteudoFoto span:nth-child(1){
+    display: block;
+    background-image: url('users/user1.jpg');
+    background-size:contain;
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+}
+
+.conteudoFoto span:nth-child(2){
+    margin-left: 1.5rem;
+    font-size: 1.7rem;
+}
+
+.funcConteudo{
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+}
+
+.funcConteudo i{
+    padding: .8rem;
+    cursor: pointer;
+}
+
+.conteudoConversa{
+    width: 100%;
+    height: calc(100% - 12.5rem);
+    background-image: url('imgs/parede.jpg');
+    overflow-y: auto;
+    background-size: contain;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.conteudoConversa::-webkit-scrollbar {
+    width: 1rem;      
+}
+.conteudoConversa::-webkit-scrollbar-track {
+    background: #202c33; 
+    height: 1rem;
+}
+.conteudoConversa::-webkit-scrollbar-thumb {
+    background-color: #aebac1;  
+    border-radius: 20px;       
+    height: 1rem;
+    border: 3px solid #202c33;
+  }
+
+.DataConversa{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #8696a0;
+    padding: 1rem 0;
+}
+
+.DataConversa p{
+    font-size: 1.4rem;
+    text-align: center;
+    padding: .2rem 1rem;
+    background-color: #202c33;
+}
+
+.destinatario{
+    left: 2%;
+    max-width: 50%;
+    padding: .8rem;
+    margin: 1rem 0 2rem 0;
+    border-radius: 1rem;
+    height: auto;
+    color: white;
+    background-color: #202c33;
+    position: relative;
+}
+
+.DestData{
+    width: 100%;
+    padding-right: 2%;
+    text-align: right;
+    font-size: 1.25rem;
+}
+
+.destinatario::before{
+    content: '';
+    /* background-color: #202c33; */
+    position: absolute;
+    bottom: 0;
+    left: -2%;
+    width: 2rem;
+    height: 1rem;
+    border-bottom: 1rem solid #202c33;
+    border-left: 1rem solid transparent;
+}
+
+.remetente{
+    left: 48%;
+    max-width: 50%;
+    margin: 1rem 0 2rem 0;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    height: auto;
+    background-color: #4a4932;
+    color: white;
+    position: relative;
+}
+
+.remetente::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -2%;
+    width: 2rem;
+    height: 1rem;
+    border-bottom: 1rem solid #4a4932;
+    border-right: 1rem solid transparent;
+}
+
+
+.AcoesConversa{
+    height: 6.5rem;
+    position: fixed;
+    bottom: 0;
+    width: 70%;
+    background-color: #111b21;
+    padding: 1rem 0rem;
+    display: flex;
+    align-items: center;
+}
+
+.ContEmoji{
+    width: 7%;
+    font-size: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8696a0;
+}
+
+.EnviarMens{
+    width: 93%;
+    height: 100%;
+    display: flex;
+    align-items: center;  
+}
+
+.enviar{
+    width: 6%;
+    display: flex;
+    align-items: center;
+    font-size: 2.2rem;
+    color: #8696a0;
+}
+
+.EnviarMens input{
+   height: 70%;
+   width: 97%;
+   border-radius: 1.3rem;
+   border: 0;
+   padding-left: 2%;
+   color: #8696a0;
+   outline: none;
+   background-color: #202c33;
+}
